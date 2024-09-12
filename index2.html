@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание 2-х сайтов</title>
+    <style>
+        body {
+            font-size: 108%;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 40px;
+            margin-right: 40px;
+            margin-top: 20px;
+        }
+        hr {
+            position: relative;
+            top: 20px;
+            border: none;
+            height: 2px;
+            background: rgb(114, 114, 114);
+            margin-bottom: 50px;
+            
+        }
+
+        .logo {
+            margin-left: 10px;
+        }
+
+        .square {
+            width: 30px;
+            height: 30px;
+            border: 3px solid black;
+            border-radius: 25%;
+        }
+        
+        .info {
+            text-align: end;
+            
+        }
+        
+        p span {
+            text-decoration: underline;
+        }
+        ul li {
+            display: inline;
+            margin-left: 25px;
+        }
+        
+        /* Возможность работать со всем блоком под шапкой */
+        .bp {
+            display: flex;
+        }
+
+        /* Отступы маленькой навигации */
+        .l_nav {
+            margin-left: 15px; 
+            padding-right: 15px;
+            width: 677px;
+        }
+
+        /* Убрали подчеркивание ссылок */
+        .l_nav a{
+            text-decoration: none;
+        }
+
+        /* Разделение блоков с авторегулированием высоты */
+        .line{
+            width: 1px;
+            border: 1px solid rgb(63, 62, 62);
+            margin-right: 30px;
+            align-self: stretch;
+
+        }
+        /* Перенос текста */
+        .perf p {
+            word-wrap: normal;
+        }
+        
+        .foto_group {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        /* Выравниваие */
+        .f1, .f2, .f3 {
+            text-align: center;
+            width: 400px;            
+        }
+        /* Масштабирование, последнее заполняяет контейнер */
+        .f1 img, .f2 img, .f3 img {
+            width: 400px;
+            height: 400px;
+            object-fit: cover; 
+        }
+
+        .stext {
+            margin-right: 40px;
+        }
+
+        footer {
+            display: flex;
+        }
+
+        footer p {
+            text-align: center;
+            flex-grow: 1; /* Заполнение пустого пространства */
+            margin: 0;  /* Подтягивает текст наверх */
+        }
+        
+        .social{
+            display: flex;
+            gap: 15px;
+            float: right;
+        }
+
+        .tg {
+            height: 20px;
+        }
+        .vk {
+            height: 20px;
+        }
+
+        .name, .email, .comments {
+            clear:both; 
+            text-align:right;
+        }
+
+        /* Стили для модального окна */
+        .modal {
+            display: none; /* Скрываем модальное окно по умолчанию */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0); /* Черный фон */
+            background-color: rgba(0,0,0,0.4); /* Полупрозрачный фон */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* Центрируем модальное окно */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Ширина модального окна */
+        }
+        .close {
+            color: #aaa; /* Цвет кнопки закрытия */
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            height: 40px;
+            width: 70px;
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Шапка с лого, ФИО и группой -->
+    <hr>
+    <header>
+        <div class = "logo">
+            <div class = "square"></div>
+                <p>Logo</p>
+        </div>
+
+        <div class = "info">
+            <p>Группа <b><span>ЭФБО-05-23</span></b></p>
+            <p>Завойкина Александра Алексеевна</p>
+        </div>
+    </header>
+    <hr>
+
+    <!-- Навигация по сайту -->
+    <nav>
+        <ul>
+            <li><a href = "index.html" target="_blank">Главная</a><li>
+            <li>Первый семестр</li>
+            <li>Второй семестр</li>
+            <li><a href=#4>Услуги</a></li>
+            <li>Авторизация</li>
+        </ul>
+    </nav>
+    <hr>
+    
+    <!-- Навигация по странице -->
+    <div class = "bp">
+        <div class = "l_nav">
+            <p>Навигация по странице</p>
+            <p><a href = "index.html" target="_blank">Фронтенд</a></p>
+            <p><a href = "index.html" target="_blank">Бэкенд</a></p>
+        </div>
+        <div class = "line"></div>
+        <!-- Главная часть -->
+        <div class = "perf" id = "4">
+            <h1>Разработка веб-приложения</h1>
+            <div class = "foto_group">
+                <div class = "f1">
+                    <img src="./1.jpg" alt="кот">
+                    <p><b>Сайт-визитка</b></p>
+                    <button id="openModal">Заказать</button>
+                </div>
+                <div class = "f2">
+                    <img src="./2.jpg" alt="не кот">
+                    <p><b>Корпоративный сайт</b></p>
+                    <button id="openModal">Заказать</button>
+                </div>
+                <div class = "f3">
+                    <img src="./3.jpg" alt="еще кот">
+                    <p><b>Интернет-магазин</b></p>
+                    <button id="openModal">Заказать</button>
+                </div>
+            </div>
+            <!-- Какой-то текст -->
+             <div class = 'stext'>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, ea. Totam quia libero rem pariatur ea minus ipsum nihil? Consequuntur at sed fugit odit laboriosam pariatur voluptate quod eaque officiis.
+                Cum ullam, soluta tempore nostrum esse voluptas hic nulla dolore voluptatum neque molestiae, saepe at voluptatem quia vero rem maiores. Ea totam eaque cumque, maiores aliquam nostrum vero nam id.
+                Vitae modi laudantium earum odio optio voluptas, quisquam ipsa adipisci inventore quas porro aperiam tenetur eius necessitatibus, natus numquam nulla corporis laborum quia saepe. Suscipit dolor nesciunt aperiam minima? Praesentium.
+                Laborum consequatur ea nesciunt deserunt repellendus temporibus. Blanditiis minima quisquam illo atque veniam doloribus molestias rerum, placeat hic eligendi, praesentium facere. Soluta laborum autem nostrum deserunt eum atque, rem nisi!
+                Fugit saepe distinctio quos possimus cupiditate, nihil porro maiores error. Laboriosam, molestias eligendi at saepe veritatis, architecto minima ab unde non maxime quod maiores nam sed adipisci doloremque. Non, quibusdam!
+                Tempore cupiditate autem laudantium dolor perferendis neque odio facilis sit quisquam eius. Nostrum quod atque aut reprehenderit impedit officiis quaerat tempora, aspernatur dolores rem ut ipsum ipsam, sint tempore rerum.
+                Laboriosam suscipit asperiores earum sapiente neque doloremque itaque commodi consequatur minus ex perspiciatis iure corporis quaerat iste atque dolore laudantium est velit voluptate dolores, animi aliquid eligendi expedita exercitationem. Deserunt?
+                Nulla, odit placeat maxime rerum aliquam enim veritatis pariatur beatae dolores, excepturi assumenda labore obcaecati! Sint quam commodi fugit error accusamus assumenda asperiores impedit perspiciatis sapiente, delectus beatae nihil eligendi!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti necessitatibus asperiores quidem totam dolores perspiciatis? Provident maxime voluptas adipisci, nihil cumque, illum minima odio repudiandae ullam accusamus error fuga ut.
+                Doloribus, dolores minima aperiam harum laboriosam molestiae ipsum, soluta, odit corporis recusandae accusantium dolorem dolorum. Similique dolorum eligendi, minima atque, dolorem illo consequatur a assumenda nisi, voluptates veniam optio possimus?
+                Nulla eius, illo eaque consectetur voluptatibus, fuga officia non, ducimus ipsam libero cum. Quo architecto dolorem facere nostrum? Ipsam quaerat soluta perferendis, numquam magni earum? Iure, velit. Eos, dolor debitis.</p>
+             </div>
+        </div>
+    </div>
+    
+    <!-- Низ сайта -->
+    <hr>
+    <footer>
+        <p>&copy;Завойкина Александра Алексеевна, 2024</p>
+        <div class = "social">
+            <img class = "tg" src="./tg.png" alt="tg">
+            <img class = "vk" src="./vk.png" alt="vk">
+        </div>
+    </footer>
+
+        <!-- Модальные окна -->
+        <div id="modal" class="modal">
+            <div class = "modal-content">
+                <h3>Разработка веб-приложения</h3>
+                <p style = "word-wrap: normal;">Заполните форму и мы обязательно свяжемся с вами в ближайшее время для уточнения деталей</p>
+                <form id="contactForm">
+                    <!-- Поле для ввода имени -->
+                    <label for="name">Имя:</label> 
+                    <input type="text" id="name" name="name" required><br>
+                    <!-- Поле для ввода электронной почты -->
+                    <label for="email">Электронная почта:</label>
+                    <input type="email" id="email" name="email" required><br>
+                    <!-- Многострочное текстовое поле для комментариев -->                    
+                    <label for="comments">Комментарии:</label>
+                    <textarea id="comments" name="comments"></textarea><br>
+                    <!-- Кнопка отправки формы -->
+                    <button type="submit">Отправить</button>
+                    <button class = "close">х</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Подключение JavaScript файла -->
+        <script src="index2.js"></script>
+</body>
+</html>
+
