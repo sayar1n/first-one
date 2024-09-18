@@ -125,7 +125,6 @@
         }
 
         .name, .email, .comments {
-            clear:both; 
             text-align:right;
         }
 
@@ -150,9 +149,9 @@
             width: 80%; /* Ширина модального окна */
         }
         .close {
-            color: #aaa; /* Цвет кнопки закрытия */
+            color: #2b2a2a; /* Цвет кнопки закрытия */
             float: right;
-            font-size: 28px;
+            font-size: 18px;
             font-weight: bold;
         }
         .close:hover,
@@ -186,7 +185,7 @@
     <!-- Навигация по сайту -->
     <nav>
         <ul>
-            <li><a href = "index.html" target="_blank">Главная</a><li>
+            <li><a href = "index.html" target="_blank">Главная</a></li>
             <li>Первый семестр</li>
             <li>Второй семестр</li>
             <li><a href=#4>Услуги</a></li>
@@ -196,31 +195,30 @@
     <hr>
     
     <!-- Навигация по странице -->
-    <div class = "bp">
-        <div class = "l_nav">
+    <div class="bp">
+        <div class="l_nav">
             <p>Навигация по странице</p>
-            <p><a href = "index.html" target="_blank">Фронтенд</a></p>
-            <p><a href = "index.html" target="_blank">Бэкенд</a></p>
+            <p><a href="index.html" target="_blank">Фронтенд</a></p>
+            <p><a href="index.html" target="_blank">Бэкенд</a></p>
         </div>
-        <div class = "line"></div>
-        <!-- Главная часть -->
-        <div class = "perf" id = "4">
+        <div class="line"></div>
+        <div class="perf" id="4">
             <h1>Разработка веб-приложения</h1>
-            <div class = "foto_group">
-                <div class = "f1">
+            <div class="foto_group">
+                <div class="f1">
                     <img src="./1.jpg" alt="кот">
                     <p><b>Сайт-визитка</b></p>
-                    <button id="openModal">Заказать</button>
+                    <button class="openModal" data-service="Сайт-визитка">Заказать</button>
                 </div>
-                <div class = "f2">
+                <div class="f2">
                     <img src="./2.jpg" alt="не кот">
                     <p><b>Корпоративный сайт</b></p>
-                    <button id="openModal">Заказать</button>
+                    <button class="openModal" data-service="Корпоративный сайт">Заказать</button>
                 </div>
-                <div class = "f3">
+                <div class="f3">
                     <img src="./3.jpg" alt="еще кот">
                     <p><b>Интернет-магазин</b></p>
-                    <button id="openModal">Заказать</button>
+                    <button class="openModal" data-service="Интернет-магазин">Заказать</button>
                 </div>
             </div>
             <!-- Какой-то текст -->
@@ -250,30 +248,32 @@
         </div>
     </footer>
 
-        <!-- Модальные окна -->
-        <div id="modal" class="modal">
-            <div class = "modal-content">
-                <h3>Разработка веб-приложения</h3>
-                <p style = "word-wrap: normal;">Заполните форму и мы обязательно свяжемся с вами в ближайшее время для уточнения деталей</p>
-                <form id="contactForm">
-                    <!-- Поле для ввода имени -->
-                    <label for="name">Имя:</label> 
+    <!-- Модальные окна -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close">х</button>
+            <h3 id="modalTitle">Заказ услуги</h3>
+            <p>Заполните форму и мы свяжемся с вами для уточнения деталей.</p>
+            <form id="contactForm">
+                <div class="name">
+                    <label for="name">Имя:</label>
                     <input type="text" id="name" name="name" required><br>
-                    <!-- Поле для ввода электронной почты -->
+                </div>
+                <div class="email">
                     <label for="email">Электронная почта:</label>
                     <input type="email" id="email" name="email" required><br>
-                    <!-- Многострочное текстовое поле для комментариев -->                    
+                </div>
+                <div class="comments">
                     <label for="comments">Комментарии:</label>
                     <textarea id="comments" name="comments"></textarea><br>
-                    <!-- Кнопка отправки формы -->
-                    <button type="submit">Отправить</button>
-                    <button class = "close">х</button>
-                </form>
-            </div>
+                </div>
+                <button type="submit">Отправить</button>
+            </form>
         </div>
+    </div>
     
-        <!-- Подключение JavaScript файла -->
-        <script src="index2.js"></script>
+    <!-- Подключение JavaScript файла -->
+    <script src="index2.js"></script>
 </body>
 </html>
 
