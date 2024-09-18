@@ -48,6 +48,42 @@ ul li {
     display: flex;
 }
 
+nav {
+    background: linear-gradient(to right, #aa7da4, #6e1152); /* Градиент от синего к зеленому */
+    border-radius: 5px; /* Скругление углов блока */
+    padding: 10px; /* Внутренние отступы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Легкая тень для выделения */
+}
+
+nav ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Располагаем элементы в ряд */
+    justify-content: space-around; /* Расставляем элементы по всей ширине */
+}
+
+nav li {
+    margin: 0; /* Убираем внешние отступы для элементов списка */
+}
+
+nav a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: #fff; /* Белый цвет текста */
+    padding: 10px 15px; /* Внутренние отступы для ссылок */
+    border-radius: 10px; /* Скругляем углы ссылок */
+    transition: background-color 0.3s ease; /* Плавный переход фона при наведении */
+}
+
+nav a:hover {
+    background-color: #641343; /* Темнее цвет фона при наведении */
+}
+
+/* Дополнительные стили для активного элемента */
+nav a.active {
+    background-color: #e781c0; /* Цвет фона для активной ссылки */
+}
+
 /* Отступы маленькой навигации */
 .l_nav {
     margin-left: 15px; 
@@ -106,14 +142,14 @@ footer p {
 
 .social{
     margin-top: 12px;
+    margin-right: 10px;
 }
 
-.tg {
+.tg, .vk {
     height: 20px;
+
 }
-.vk {
-    height: 20px;
-}
+
 
 .name, .email, .comments {
     text-align:right;
@@ -188,7 +224,7 @@ form textarea {
 button {
     align-self: center;
     padding: 10px 20px;
-    background-color: #5b82ac;
+    background-color: #ac5b8a;
     color: white;
     border: none;
     border-radius: 5px;
@@ -196,7 +232,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #641343;
 }
 
 .close {
