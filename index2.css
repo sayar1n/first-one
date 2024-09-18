@@ -1,0 +1,213 @@
+body {
+    font-size: 108%;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+hr {
+    border: none;
+    height: 2px;
+    background: rgb(114, 114, 114);
+    margin: 0; 
+    width: 100%; 
+    
+}
+a{
+    text-decoration: none;
+}
+.logo {
+    margin-left: 10px;
+}
+
+.square {
+    width: 30px;
+    height: 30px;
+    border: 3px solid black;
+    border-radius: 25%;
+}
+
+.info {
+    text-align: end;
+    
+}
+
+p span {
+    text-decoration: underline;
+}
+ul li {
+    display: inline;
+    margin-left: 25px;
+}
+
+/* Возможность работать со всем блоком под шапкой */
+.bp {
+    display: flex;
+}
+
+/* Отступы маленькой навигации */
+.l_nav {
+    margin-left: 15px; 
+    padding-right: 15px;
+    width: 677px;
+}
+
+/* Убрали подчеркивание ссылок */
+.l_nav a{
+    text-decoration: none;
+}
+
+/* Разделение блоков с авторегулированием высоты */
+.line{
+    width: 1px;
+    border: 1px solid rgb(63, 62, 62);
+    margin-right: 30px;
+    align-self: stretch;
+}
+
+/* Перенос текста */
+.perf p {
+    word-wrap: normal;
+}
+
+.foto_group {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+/* Выравниваие */
+.f1, .f2, .f3 {
+    text-align: center;
+    width: 400px;            
+}
+/* Масштабирование, последнее заполняяет контейнер */
+.f1 img, .f2 img, .f3 img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover; 
+}
+
+.stext {
+    margin-right: 40px;
+}
+
+footer {
+    display: flex;
+}
+
+footer p {
+    text-align: center;
+    flex-grow: 1; /* Заполнение пустого пространства */
+}
+
+.social{
+    margin-top: 12px;
+}
+
+.tg {
+    height: 20px;
+}
+.vk {
+    height: 20px;
+}
+
+.name, .email, .comments {
+    text-align:right;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрываем модальное окно по умолчанию */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Черный фон */
+    background-color: rgba(0,0,0,0.4); /* Полупрозрачный фон */
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Центрируем модальное окно */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px; /* Скругление углов */
+    width: 50%; /* Ширина модального окна */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для визуальной глубины */
+}
+
+/* Стили для формы */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Отступы между полями */
+}
+
+/* Контейнер для поля и лейбла */
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Лейблы выравниваем по левому краю */
+form label {
+    flex-basis: 40%;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Поля ввода выравниваем по правому краю */
+form input,
+form select,
+form textarea {
+    flex-basis: 55%;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Выравниваем чекбокс и подпись */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+button {
+    align-self: center;
+    padding: 10px 20px;
+    background-color: #5b82ac;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.close {
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+

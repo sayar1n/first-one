@@ -4,118 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Создание 2-х сайтов</title>
-    <style>
-        body {
-            font-size: 108%;
-        }
-        /* Шапка */
-        header {
-            display: flex;
-            justify-content: space-between;
-            margin-left: 40px;
-            margin-right: 40px;
-            margin-top: 20px;
-        }
-        /* Линия разделитель */
-        hr {
-            position: relative;
-            top: 20px;
-            border: none;
-            height: 2px;
-            background: rgb(114, 114, 114);
-            margin-bottom: 50px;
-        }
-
-        .logo {
-            margin-left: 10px;
-        }
-
-        .square {
-            width: 30px;
-            height: 30px;
-            border: 3px solid black;
-            border-radius: 25%;
-        }
-        
-        .info {
-            text-align: end;
-        }
-        
-        p span {
-            
-            text-decoration: underline;
-        }
-        ul li {
-            display: inline;
-            margin-left: 25px;
-        }
-
-        /* Возможность работать со всем блоком под шапкой */
-        .bp {
-            display: flex;
-        }
-
-        /* Отступы маленькой навигации */
-        .l_nav {
-            margin-left: 15px;
-            padding-right: 15px;
-        }
-
-        /* Убрали подчеркивание ссылок */
-        a{
-            text-decoration: none;
-        }
-
-        /* Разделение блоков с авторегулированием высоты */
-        .line{
-            width: 1px;
-            border: 1px solid rgb(63, 62, 62);
-            margin-right: 30px;
-            align-self: stretch;
-
-        }
-        .perf {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        /* Перенос текста */
-        .perf p {
-            word-wrap: normal;
-        }
-        /* Настройка фото, чтоб не перекрывала текст */
-        .cat_user {
-            width: 350px;
-            height: 400px;
-            margin-right: 200px;
-        }
-
-        footer {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        footer p {
-            text-align: center;
-            flex-grow: 1; /* Заполнение пустого пространства */
-            margin: 0;  /* Подтягивает текст наверх */
-        }
-        
-        .social{
-            display: flex;
-            gap: 15px;
-            float: right;
-        }
-
-        .tg {
-            height: 20px;
-        }
-        .vk {
-            height: 20px;
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -137,10 +26,10 @@
      
     <nav>
         <ul>
-            <li><a href = "index.html" target="_blank">Главная</a><li>
+            <li><a href = "index.html">Главная</a><li>
             <li>Первый семестр</li>
             <li>Второй семестр</li>
-            <li><a href="index2.html" target="_blank">Услуги</a></li>
+            <li><a href="index2.html">Услуги</a></li>
             <li>Авторизация</li>
         </ul>
     </nav>

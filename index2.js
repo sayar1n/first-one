@@ -9,8 +9,6 @@ const orderButtons = document.querySelectorAll(".openModal");
 // Добавляем обработчик на каждую кнопку "Заказать"
 orderButtons.forEach(button => {
     button.addEventListener("click", (event) => {
-        const serviceName = button.getAttribute("data-service"); // Получаем название услуги
-        modalTitle.textContent = `Заказать ${serviceName}`; // Устанавливаем название в модальное окно
         modal.style.display = "block"; // Открываем модальное окно
     });
 });

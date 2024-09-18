@@ -4,166 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Создание 2-х сайтов</title>
-    <style>
-        body {
-            font-size: 108%;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            margin-left: 40px;
-            margin-right: 40px;
-            margin-top: 20px;
-        }
-        hr {
-            position: relative;
-            top: 20px;
-            border: none;
-            height: 2px;
-            background: rgb(114, 114, 114);
-            margin-bottom: 50px;
-            
-        }
+    <link rel="stylesheet" href="index2.css">
 
-        .logo {
-            margin-left: 10px;
-        }
-
-        .square {
-            width: 30px;
-            height: 30px;
-            border: 3px solid black;
-            border-radius: 25%;
-        }
-        
-        .info {
-            text-align: end;
-            
-        }
-        
-        p span {
-            text-decoration: underline;
-        }
-        ul li {
-            display: inline;
-            margin-left: 25px;
-        }
-        
-        /* Возможность работать со всем блоком под шапкой */
-        .bp {
-            display: flex;
-        }
-
-        /* Отступы маленькой навигации */
-        .l_nav {
-            margin-left: 15px; 
-            padding-right: 15px;
-            width: 677px;
-        }
-
-        /* Убрали подчеркивание ссылок */
-        .l_nav a{
-            text-decoration: none;
-        }
-
-        /* Разделение блоков с авторегулированием высоты */
-        .line{
-            width: 1px;
-            border: 1px solid rgb(63, 62, 62);
-            margin-right: 30px;
-            align-self: stretch;
-
-        }
-        /* Перенос текста */
-        .perf p {
-            word-wrap: normal;
-        }
-        
-        .foto_group {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-
-        /* Выравниваие */
-        .f1, .f2, .f3 {
-            text-align: center;
-            width: 400px;            
-        }
-        /* Масштабирование, последнее заполняяет контейнер */
-        .f1 img, .f2 img, .f3 img {
-            width: 400px;
-            height: 400px;
-            object-fit: cover; 
-        }
-
-        .stext {
-            margin-right: 40px;
-        }
-
-        footer {
-            display: flex;
-        }
-
-        footer p {
-            text-align: center;
-            flex-grow: 1; /* Заполнение пустого пространства */
-            margin: 0;  /* Подтягивает текст наверх */
-        }
-        
-        .social{
-            display: flex;
-            gap: 15px;
-            float: right;
-        }
-
-        .tg {
-            height: 20px;
-        }
-        .vk {
-            height: 20px;
-        }
-
-        .name, .email, .comments {
-            text-align:right;
-        }
-
-        /* Стили для модального окна */
-        .modal {
-            display: none; /* Скрываем модальное окно по умолчанию */
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0); /* Черный фон */
-            background-color: rgba(0,0,0,0.4); /* Полупрозрачный фон */
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; /* Центрируем модальное окно */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Ширина модального окна */
-        }
-        .close {
-            color: #2b2a2a; /* Цвет кнопки закрытия */
-            float: right;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            height: 40px;
-            width: 70px;
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-    </style>
 </head>
 
 <body>
@@ -185,7 +27,7 @@
     <!-- Навигация по сайту -->
     <nav>
         <ul>
-            <li><a href = "index.html" target="_blank">Главная</a></li>
+            <li><a href = "index.html">Главная</a></li>
             <li>Первый семестр</li>
             <li>Второй семестр</li>
             <li><a href=#4>Услуги</a></li>
@@ -198,8 +40,8 @@
     <div class="bp">
         <div class="l_nav">
             <p>Навигация по странице</p>
-            <p><a href="index.html" target="_blank">Фронтенд</a></p>
-            <p><a href="index.html" target="_blank">Бэкенд</a></p>
+            <p><a href="index.html">Фронтенд</a></p>
+            <p><a href="index.html">Бэкенд</a></p>
         </div>
         <div class="line"></div>
         <div class="perf" id="4">
@@ -251,26 +93,57 @@
     <!-- Модальные окна -->
     <div id="modal" class="modal">
         <div class="modal-content">
-            <button class="close">х</button>
-            <h3 id="modalTitle">Заказ услуги</h3>
-            <p>Заполните форму и мы свяжемся с вами для уточнения деталей.</p>
+            <button class="close">x</button>
+            <h3 id="modalTitle">Разработка веб-приложения</h3>
+            <p>Заполните форму и мы обязательно свяжемся с вами в ближайшее время для уточнения деталей</p>
             <form id="contactForm">
-                <div class="name">
-                    <label for="name">Имя:</label>
-                    <input type="text" id="name" name="name" required><br>
+                <!-- Поле Имя -->
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-                <div class="email">
-                    <label for="email">Электронная почта:</label>
-                    <input type="email" id="email" name="email" required><br>
+                <!-- Поле Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-                <div class="comments">
-                    <label for="comments">Комментарии:</label>
-                    <textarea id="comments" name="comments"></textarea><br>
+                <!-- Поле Телефон -->
+                <div class="form-group">
+                    <label for="mobile">Телефон</label>
+                    <input type="tel" id="mobile" name="mobile" required>
                 </div>
+                <!-- Поле Страна -->
+                <div class="form-group">
+                    <label for="country">Страна</label>
+                    <select id="country" name="country">
+                        <option>Россия</option>
+                        <option>Германия</option>
+                        <option>Казахстан</option>
+                        <option>Бельгия</option>
+                        <option>Сербия</option>
+                    </select>
+                </div>
+                <!-- Поле Дата -->
+                <div class="form-group">
+                    <label for="calendar">Дата</label>
+                    <input type="date" id="calendar" name="calendar">
+                </div>
+                <!-- Поле Комментарий -->
+                <div class="form-group">
+                    <label for="comments">Комментарий</label>
+                    <textarea id="comments" name="comments"></textarea>
+                </div>
+                <!-- Чекбокс -->
+                <div class="checkbox-group">
+                    <input type="checkbox" id="option1" name="option1">
+                    <label for="option1">Согласен на обработку персональных данных</label>
+                </div>
+                <!-- Кнопка отправки -->
                 <button type="submit">Отправить</button>
             </form>
         </div>
     </div>
+    
     
     <!-- Подключение JavaScript файла -->
     <script src="index2.js"></script>
