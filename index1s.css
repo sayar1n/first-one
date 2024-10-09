@@ -1,0 +1,43 @@
+.univ_info {
+    display: flex;
+}
+
+.l_nav {
+    margin: 20px;
+}
+
+.base_part {
+    display: flex;
+    flex-direction: column;   /* Расположить элементы друг под другом */
+    justify-content: flex-start; /* Начальное выравнивание по вертикали */
+    margin: 20px; /* Добавьте немного отступа вокруг блока, если нужно */
+    width: 60%;
+}
+
+table {
+    margin-top: 15px;
+    border: 2px solid rgb(54, 54, 54);  
+    width: 100%;
+}
+
+.lecture_t, .practice_t, .ymap, .ppdf {
+    margin-bottom: 60px;
+    margin-left: 40px;
+    
+
+}
+
+thead th {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+tbody td {
+    padding: 4px;
+
+}
+
+object {
+    
+    width: 800px;
+    height: 700px;
+}

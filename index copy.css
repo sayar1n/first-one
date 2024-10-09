@@ -1,0 +1,149 @@
+body {
+    font-size: 108%;
+}
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+/* Линия разделитель */
+hr {
+    border: none;
+    height: 2px;
+    background: rgb(114, 114, 114);
+    margin: 0; 
+    width: 100%; 
+    
+}
+
+.logo {
+    margin-left: 10px;
+}
+
+.square {
+    width: 30px;
+    height: 30px;
+    border: 3px solid black;
+    border-radius: 25%;
+}
+
+.info {
+    text-align: end;
+}
+
+p span {
+    text-decoration: underline;
+}
+ul li {
+    display: inline;
+    margin-left: 25px;
+}
+
+/* Возможность работать со всем блоком под шапкой */
+.bp {
+    display: flex;
+}
+
+/* Убрали подчеркивание ссылок */
+a{
+    text-decoration: none;
+}
+
+nav {
+    background: linear-gradient(to right, #aa7da4, #6e1152); /* Градиент от синего к зеленому */
+    border-radius: 5px; /* Скругление углов блока */
+    padding: 10px; /* Внутренние отступы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Легкая тень для выделения */
+}
+
+nav ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Располагаем элементы в ряд */
+    justify-content: space-around; /* Расставляем элементы по всей ширине */
+}
+
+nav li {
+    margin: 0; /* Убираем внешние отступы для элементов списка */
+}
+
+nav a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: #fff; /* Белый цвет текста */
+    padding: 10px 15px; /* Внутренние отступы для ссылок */
+    border-radius: 10px; /* Скругляем углы ссылок */
+    transition: background-color 0.3s ease; /* Плавный переход фона при наведении */
+}
+
+nav a:hover {
+    background-color: #641343; /* Темнее цвет фона при наведении */
+}
+
+/* Дополнительные стили для активного элемента */
+nav a.active {
+    background-color: #e781c0; /* Цвет фона для активной ссылки */
+}
+
+.l_nav {
+    margin: 20px;
+
+}
+
+/* Разделение блоков с авторегулированием высоты */
+.line{
+    width: 1px;
+    border: 1px solid rgb(63, 62, 62);
+    margin-right: 30px;
+    align-self: stretch;
+
+}
+
+.perf {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Перенос текста */
+.perf p {
+    word-wrap: normal;
+}
+/* Настройка фото, чтоб не перекрывала текст */
+.cat_user {
+    width: 350px;
+    height: 400px;
+    margin-right: 200px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer p {
+    text-align: center;
+    flex-grow: 1; /* Заполнение пустого пространства */
+}
+
+.social{
+    margin-top: 12px;
+}
+
+.tg {
+    height: 20px;
+}
+.vk {
+    height: 20px;
+}
+
+.video1, .video2 {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 730px;
+    height: 434px;
+}
+
