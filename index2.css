@@ -68,20 +68,20 @@ nav li {
 }
 
 nav a {
-    text-decoration: none; /* Убираем подчеркивание у ссылок */
-    color: #fff; /* Белый цвет текста */
-    padding: 10px 15px; /* Внутренние отступы для ссылок */
-    border-radius: 10px; /* Скругляем углы ссылок */
-    transition: background-color 0.3s ease; /* Плавный переход фона при наведении */
+    text-decoration: none; 
+    color: #fff; 
+    padding: 10px 15px; 
+    border-radius: 10px;
+    transition: background-color 0.3s ease; 
 }
 
 nav a:hover {
-    background-color: #641343; /* Темнее цвет фона при наведении */
+    background-color: #641343; 
 }
 
 /* Дополнительные стили для активного элемента */
 nav a.active {
-    background-color: #e781c0; /* Цвет фона для активной ссылки */
+    background-color: #e781c0; 
 }
 
 /* Отступы маленькой навигации */
@@ -102,6 +102,10 @@ nav a.active {
     align-self: stretch;
 }
 
+.perf {
+    margin: 15px 0;
+}
+
 /* Перенос текста */
 .perf p {
     word-wrap: normal;
@@ -110,23 +114,44 @@ nav a.active {
 .foto_group {
     display: flex;
     justify-content: space-around;
+    max-width: 1600px;
+    gap: 20px;
     margin-bottom: 20px;
 }
 
 /* Выравниваие */
 .f1, .f2, .f3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 450px;
+    background-color: #fafafa;
+    border-radius: 20px;
     text-align: center;
-    width: 400px;            
+}
+
+.f1:hover, .f2:hover, .f3:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.foto_group p {
+    padding: 10px;
 }
 /* Масштабирование, последнее заполняяет контейнер */
 .f1 img, .f2 img, .f3 img {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
+    border-radius: 30px;
     object-fit: cover; 
 }
 
 .stext {
     margin-right: 40px;
+    line-height: 23px;
+    text-indent: 1.5rem;
 }
 
 footer {
@@ -145,9 +170,7 @@ footer p {
 
 .tg, .vk {
     height: 20px;
-
 }
-
 
 .name, .email, .comments {
     text-align:right;
@@ -168,19 +191,19 @@ footer p {
 }
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto; /* Центрируем модальное окно */
+    margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    border-radius: 10px; /* Скругление углов */
-    width: 50%; /* Ширина модального окна */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для визуальной глубины */
+    border-radius: 10px; 
+    width: 50%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 /* Стили для формы */
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Отступы между полями */
+    gap: 10px; 
 }
 
 /* Контейнер для поля и лейбла */

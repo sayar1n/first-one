@@ -16,7 +16,6 @@ hr {
     background: rgb(114, 114, 114);
     margin: 0; 
     width: 100%; 
-    
 }
 
 .logo {
@@ -53,44 +52,43 @@ a{
 }
 
 nav {
-    background: linear-gradient(to right, #aa7da4, #6e1152); /* Градиент от синего к зеленому */
-    border-radius: 5px; /* Скругление углов блока */
-    padding: 10px; /* Внутренние отступы */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Легкая тень для выделения */
+    background: linear-gradient(to right, #aa7da4, #6e1152); 
+    border-radius: 5px;
+    padding: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 nav ul {
-    list-style: none; /* Убираем маркеры списка */
+    list-style: none; 
     padding: 0;
     margin: 0;
-    display: flex; /* Располагаем элементы в ряд */
-    justify-content: space-around; /* Расставляем элементы по всей ширине */
+    display: flex; 
+    justify-content: space-around; 
 }
 
 nav li {
-    margin: 0; /* Убираем внешние отступы для элементов списка */
+    margin: 0; 
 }
 
 nav a {
-    text-decoration: none; /* Убираем подчеркивание у ссылок */
-    color: #fff; /* Белый цвет текста */
-    padding: 10px 15px; /* Внутренние отступы для ссылок */
-    border-radius: 10px; /* Скругляем углы ссылок */
-    transition: background-color 0.3s ease; /* Плавный переход фона при наведении */
+    text-decoration: none;
+    color: #fff; 
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #641343; /* Темнее цвет фона при наведении */
+    background-color: #641343;
 }
 
 /* Дополнительные стили для активного элемента */
 nav a.active {
-    background-color: #e781c0; /* Цвет фона для активной ссылки */
+    background-color: #e781c0; 
 }
 
 .l_nav {
     margin: 20px;
-
 }
 
 /* Разделение блоков с авторегулированием высоты */
@@ -99,7 +97,6 @@ nav a.active {
     border: 1px solid rgb(63, 62, 62);
     margin-right: 30px;
     align-self: stretch;
-
 }
 
 .perf {

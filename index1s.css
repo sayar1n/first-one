@@ -2,15 +2,11 @@
     display: flex;
 }
 
-.l_nav {
-    margin: 20px;
-}
-
 .base_part {
     display: flex;
-    flex-direction: column;   /* Расположить элементы друг под другом */
-    justify-content: flex-start; /* Начальное выравнивание по вертикали */
-    margin: 20px; /* Добавьте немного отступа вокруг блока, если нужно */
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 20px;
     width: 60%;
 }
 
@@ -23,8 +19,6 @@ table {
 .lecture_t, .practice_t, .ymap, .ppdf {
     margin-bottom: 60px;
     margin-left: 40px;
-    
-
 }
 
 thead th {
@@ -33,11 +27,9 @@ thead th {
 }
 tbody td {
     padding: 4px;
-
 }
 
 object {
-    
     width: 800px;
     height: 700px;
 }
