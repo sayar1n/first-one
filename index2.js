@@ -1,26 +1,42 @@
-// Получаем элементы модального окна и кнопок
-const modal = document.getElementById("modal");
-const modalTitle = document.getElementById("modalTitle");
-const closeModalBtn = document.querySelector(".close");
+// Ждем полной загрузки страницы
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("contactForm");
+    const modal = document.getElementById("modal");
+    const closeModalButton = document.querySelector(".close");
+    const openModalButtons = document.querySelectorAll(".openModal");
 
-// Находим все кнопки с классом "openModal"
-const orderButtons = document.querySelectorAll(".openModal");
-
-// Добавляем обработчик на каждую кнопку "Заказать"
-orderButtons.forEach(button => {
-    button.addEventListener("click", (event) => {
-        modal.style.display = "block"; // Открываем модальное окно
+    // Открытие модального окна при нажатии на кнопку "Заказать"
+    openModalButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            modal.style.display = "block"; // Показываем модальное окно
+        });
     });
-});
 
-// Закрываем модальное окно при нажатии на "X"
-closeModalBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-});
+    // Закрытие модального окна по нажатию на кнопку "x"
+    closeModalButton.addEventListener("click", function() {
+        modal.style.display = "none"; // Скрываем модальное окно
+    });
 
-// Закрываем модальное окно при клике вне его области
-window.addEventListener("click", (event) => {
-    if (event.target === modal) {
+    // Закрытие модального окна при клике вне его содержимого
+    window.addEventListener("click", function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none"; // Скрываем модальное окно
+        }
+    });
+
+    // Отправка формы
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Предотвращаем стандартную отправку формы
+        
+        // Здесь можно добавить логику отправки формы на сервер через AJAX, если нужно
+
+        // Показать сообщение об успешной отправке формы
+        alert("Спасибо за отправку формы!");
+
+        // Очистить форму после отправки
+        form.reset();
+
+        // Закрыть модальное окно
         modal.style.display = "none";
-    }
+    });
 });

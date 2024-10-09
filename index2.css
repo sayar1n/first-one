@@ -86,9 +86,7 @@ nav a.active {
 
 /* Отступы маленькой навигации */
 .l_nav {
-    margin-left: 15px; 
-    padding-right: 15px;
-    width: 677px;
+    margin: 20px;
 }
 
 /* Убрали подчеркивание ссылок */

@@ -35,7 +35,6 @@ hr {
 }
 
 p span {
-    
     text-decoration: underline;
 }
 ul li {
@@ -89,6 +88,11 @@ nav a.active {
     background-color: #e781c0; /* Цвет фона для активной ссылки */
 }
 
+.l_nav {
+    margin: 20px;
+
+}
+
 /* Разделение блоков с авторегулированием высоты */
 .line{
     width: 1px;
@@ -97,6 +101,7 @@ nav a.active {
     align-self: stretch;
 
 }
+
 .perf {
     display: flex;
     justify-content: space-between;
@@ -133,3 +138,12 @@ footer p {
 .vk {
     height: 20px;
 }
+
+.video1, .video2 {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 730px;
+    height: 434px;
+}
+
