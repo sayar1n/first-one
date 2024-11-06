@@ -1,65 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index1s.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="./src/fonts.css">
+    <link rel="stylesheet" href="./src/styles/header.css">
+    <link rel="stylesheet" href="./src/styles/nav.css">
+    <link rel="stylesheet" href="./src/styles/lil_nav.css">
+    <link rel="stylesheet" href="./src/styles/footer.css">
+    <link rel="stylesheet" href="./src/styles/table_module.css">
     <title>Первый семестр</title>
 </head>
+
 <body>
-     <!-- Шапка с лого, ФИО и группой -->
-
-     <header>
-        <div class = "logo">
-            <div class = "square"></div>
-                <p>Logo</p>
+    <header>
+        <div class="logo">
+            <div class="square"></div>
+            <p>Logo</p>
         </div>
-
-        <div class = "info">
-            <p>Группа <b><span>ЭФБО-05-23</span></b></p>
+        <div class="info-me">
+            <p>Группа <span>ЭФБО-05-23</span></p>
             <p>Завойкина Александра Алексеевна</p>
         </div>
     </header>
 
-    <!-- Навигация по сайту -->
     <nav>
         <ul>
-            <li><a href = "index.html">Главная</a></li>
-            <li><a href = "index1s.html">Первый семестр</a></li>
+            <li><a href="index.html">Главная</a>
+            <li>
+            <li><a href="tableindex.html">Первый семестр</a></li>
             <li><a href="#a">Второй семестр</a></li>
-            <li><a href = "index2.html">Услуги</a></li>
+            <li><a href="index2.html">Услуги</a></li>
             <li><a href="#a">Авторизация</a></li>
         </ul>
     </nav>
 
-    <!-- Блок -->
-    <div class = "univ_info">  
-        <!-- Навигация по странице -->
-        <div class = "l_nav">
-            <p>Навигация по странице</p>
-            <p><a href=#lecture>Лекции</a></p>
-            <p><a href=#practice>Практики</a></p>
-            <p><a href=#adress_v>Адрес вуза</a></p>
-            <p><a href=#workin_prog>Рабочая программа</a></p>
-        </div>
-        <div class = "line"></div>
+    <div class="hero-section">
+        <aside class="hero-navigation">
+            <h2>Навигация</h2>
+            <p><a href="#lectures">Лекции</a></p>
+            <p><a href="#practices">Практики</a></p>
+            <p><a href="#adress_v">Адрес вуза</a></p>
+            <p><a href="#workin_prog">Рабочая программа</a></p>
+        </aside>
 
-        <div class = "base_part">
-            <h3>Первый семестр</h3>
-            <div class = "lecture_t" id = "lecture">
-                <h><b>Лекции</b></h>
-                <!-- Начало и конец страницы -->
-                <table >
-                    <!-- Заголовки -->
-                    <thead style="background-color: rgb(202, 202, 202); text-align: left;">
-                        <th>Номер</th>
-                        <th>Тема</th>
-                        <th>Посещение</th>
+
+        <div class="info">
+            <!-- Заголовок -->
+            <h1>Первый семестр</h1>
+            <div class="lectures" id="lectures">
+                <h3>Лекции</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Номер</th>
+                            <th>Тема</th>
+                            <th>Посещение</th>
+                        </tr>
                     </thead>
-                    <!-- Тело таблицы -->
-                    <tbody style="background-color: rgba(240, 240, 240, 0.596);">
+                    <tbody>
                         <tr>
                             <td>1</td>
                             <td>Основы языка HTML</td>
@@ -77,12 +78,12 @@
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td> Адаптивная верстка. Flexbox и Grid Lauout</td>
+                            <td>Адаптивная верстка. Flexbox и Grid Layout</td>
                             <td><input type="checkbox"></td>
                         </tr>
                         <tr>
                             <td>5</td>
-                            <td>Bootstrap - работа с фреймворком</td>
+                            <td>Bootstrap — работа с фреймворком</td>
                             <td><input type="checkbox"></td>
                         </tr>
                         <tr>
@@ -97,26 +98,25 @@
                         </tr>
                         <tr>
                             <td>8</td>
-                            <td>Введение в Github и Github Pages</td>
+                            <td>Введение в GitHub и GitHub Pages</td>
                             <td><input type="checkbox"></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
-            <div class = "practice_t" id = "practice">
-                <h><b>Практики</b></h>
-                <!-- Начало и конец страницы -->
-                <table  >
-                    <!-- Заголовки -->
-                    <thead style="background-color: rgb(202, 202, 202); text-align: left;">
-                        <th>Номер</th>
-                        <th>Тема</th>
-                        <th>Посещение</th>
-                        <th>Выполнение</th>
+            <!-- Блок про Фронтенд -->
+            <div class="practices" id="practices">
+                <h3>Практики</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Номер</th>
+                            <th>Тема</th>
+                            <th>Посещение</th>
+                            <th>Выполнение</th>
+                        </tr>
                     </thead>
-                    <!-- Тело таблицы -->
-                    <tbody style="background-color: rgba(240, 240, 240, 0.596);">
+                    <tbody>
                         <tr>
                             <td>1</td>
                             <td>Основы языка HTML</td>
@@ -125,7 +125,7 @@
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>Формы и кнопки HTML</td>
+                            <td>Формы и кнопки в HTML</td>
                             <td><input type="checkbox"></td>
                             <td><input type="checkbox"></td>
                         </tr>
@@ -137,7 +137,7 @@
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td> Основы работы с CSS</td>
+                            <td>Основы работы с CSS</td>
                             <td><input type="checkbox"></td>
                             <td><input type="checkbox"></td>
                         </tr>
@@ -167,13 +167,13 @@
                         </tr>
                         <tr>
                             <td>9</td>
-                            <td>Основны языка JavaScript</td>
+                            <td>Основы языка JavaScript</td>
                             <td><input type="checkbox"></td>
                             <td><input type="checkbox"></td>
                         </tr>
                         <tr>
                             <td>10</td>
-                            <td>Базовые задачи JS</td>
+                            <td>Базовые задачи на JS</td>
                             <td><input type="checkbox"></td>
                             <td><input type="checkbox"></td>
                         </tr>
@@ -197,7 +197,7 @@
                         </tr>
                         <tr>
                             <td>14</td>
-                            <td>Анимации и работы с ними</td>
+                            <td>Анимации и работа с ними</td>
                             <td><input type="checkbox"></td>
                             <td><input type="checkbox"></td>
                         </tr>
@@ -215,28 +215,33 @@
                         </tr>
                     </tbody>
                 </table>
-                <div class = "ymap" id = "adress_v">
-                    <p><b>Занятия проходят по адресу: 
-                    <span style="text-decoration: underline;">просп. Вернадского, 78</b></span></p>
-                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A70361c35f18f7af25be8eda415ab4020323fa64c6fd51d54d5841cbb123fbd85&amp;source=constructor" width="874" height="459" frameborder="0"></iframe>
+            </div>
+            <!-- Блок про Бэкенд -->
+            <div class="adress_v" id="adress_v">
+                <p><b>Занятия проходят по адресу:
+                <span style="text-decoration: underline;">просп. Вернадского, 78</b></span></p>
+                <div class="map-container">
+                    <iframe
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A70361c35f18f7af25be8eda415ab4020323fa64c6fd51d54d5841cbb123fbd85&amp;source=constructor">
+                    </iframe>
                 </div>
-                <div class = "ppdf" id = "workin_prog">
-                    <p><b>Сказка о царе Салтане</b></p>
-                    <object data="https://fenixdeti.ru/img/files/detskaya_literatyra/skazka_o_care_saltane.pdf" type="" ></object>
-                </div>
+            </div>
+
+            <div class="workin_prog" id="workin_prog">
+                <h3>Сказка о царе Салтане</h3>
+                <object data="https://fenixdeti.ru/img/files/detskaya_literatyra/skazka_o_care_saltane.pdf" type="" >
+                </object>
             </div>
         </div>
     </div>
 
-    <!-- Низ сайта -->
-    <hr>
     <footer>
         <p>&copy;Завойкина Александра Алексеевна, 2024</p>
-        <div class = "social">
-            <img class = "tg" src="./images/tg.png" alt="tg">
-            <img class = "vk" src="./images/vk.png" alt="vk">
+        <div class="social">
+            <img class="social_icon" src="./src/images/tg.png" alt="tg">
+            <img class="social_icon" src="./src/images/vk.png" alt="vk">
         </div>
     </footer>
 </body>
-</html>
 
+</html>
