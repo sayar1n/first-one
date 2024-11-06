@@ -1,0 +1,72 @@
+@import url("header.css");
+@import url("nav.css");
+@import url("lil_nav.css");
+@import url("footer.css");
+@import url("global.css");
+
+.hero-hello {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cat_user {
+    width: 200px;
+    height: 200px;
+    margin-left: 60px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+.frontend div {
+    text-align: center;
+}
+
+.backend div {
+    text-align: center;
+}
+
+.video {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 730px;
+    height: 434px;
+}
+
+@media (max-width: 1024px) {
+    .video {
+        width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-hello {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .user-image {
+        width: 150px;
+        height: 150px;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .video {
+        width: 340px;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .video {
+        width: 260px;
+    }
+}
