@@ -1,86 +1,131 @@
-// Функция для открытия модального окна
-function openModal(serviceType) {
-    document.getElementById('modal').style.display = "flex";
-    document.getElementById("serviceType").value = serviceType;
-}
-// Функция для закрытия модального окна
-function closeModal() {
-    document.getElementById('modal').style.display = 'none';
-    document.getElementById('error-messages').innerHTML = '';
-    document.getElementById('service-form').reset();
-}
+// Объект для хранения данных формы
+document.addEventListener("DOMContentLoaded", () => {
+    // Объект для хранения данных формы
+    const formData = {
+        name: '',
+        email: '',
+        phone: '',
+        date: '',
+        comment: '',
+        printData: function () {
+            console.log(`Имя: ${this.name}`);
+            console.log(`E-mail: ${this.email}`);
+            console.log(`Телефон: ${this.phone}`);
+            console.log(`Дата: ${this.date}`);
+            console.log(`Комментарий: ${this.comment}`);
+        }
+    };
 
-// Функция для проверки формы перед отправкой
-function validateForm() {
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var phone = document.getElementById('phone').value;
-    var country = document.getElementById('country').value;
+    // Функция отправки формы
+    function submitForm(event) {
+        event.preventDefault();
 
-    var errors = [];
+        // Сбор данных из формы
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const date = document.getElementById('date').value.trim();
+        const comment = document.getElementById('comment').value.trim();
 
-    // Проверяем каждое поле
-    if (name === '') {
-        errors.push('Пожалуйста, введите ваше имя.');
+        // Проверка обязательных полей
+        if (!name || !email || !comment) {
+            alert('Пожалуйста, заполните обязательные поля: Имя, Почта и Комментарий.');
+            return;
+        }
+
+        // Проверка номера телефона
+        const phoneRegex = /^\d+$/; // Разрешены только цифры
+        if (phone && !phoneRegex.test(phone)) {
+            alert('Телефон должен содержать только цифры.');
+            return;
+        }
+
+        // Проверка корректности email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Простая проверка email
+        if (!emailRegex.test(email)) {
+            alert('Введите корректный e-mail.');
+            return;
+        }
+
+        // Сохранение данных в объект formData
+        formData.name = name;
+        formData.email = email;
+        formData.phone = phone;
+        formData.date = date;
+        formData.comment = comment;
+
+        // Печать данных в консоль
+        formData.printData();
+
+        // Сообщение об успешной отправке
+        const successMessage = document.getElementById('success-message');
+
+        successMessage.textContent = "Форма успешно отправлена!";
+        successMessage.style.display = "block";
+        successMessage.classList.add('fade-in'); // Добавляем класс для анимации
+
+        // Скрываем сообщение через 3 секунды
+        setTimeout(() => {
+            successMessage.style.display = "none";
+            successMessage.classList.remove('fade-in'); // Убираем класс анимации
+        }, 3000);
+
+        // Закрыть модальное окно (если используется модалка)
+        closeModal();
     }
 
-    if (email === '') {
-        errors.push('Пожалуйста, введите ваш email.');
-    }
+    // Функции для работы с модальным окном
+    window.openModal = function () {
+        const modal = document.getElementById('modal');
+        if (modal) {
+            modal.classList.add('show');
+            modal.style.display = 'block';
+        }
+    };
 
-    if (phone === '') {
-        errors.push('Пожалуйста, введите ваш номер телефона.');
-    }
+    window.closeModal = function () {
+        const modal = document.getElementById('modal');
+        if (modal) {
+            modal.classList.remove('show');
+            modal.style.display = 'none';
+        }
+    };
 
-    if (country === '') {
-        errors.push('Пожалуйста, выберите страну.');
-    }
-
-    // Если есть ошибки, показываем их
-    if (errors.length > 0) {
-        var errorContainer = document.getElementById('error-messages');
-        errorContainer.innerHTML = errors.join('<br>');
-        return false; // Останавливаем отправку формы
+    // Добавление обработчика отправки формы
+    const form = document.getElementById('service-form');
+    if (form) {
+        form.addEventListener('submit', submitForm);
     } else {
-        // Если ошибок нет, перенаправляем на страницу подтверждения
-        window.location.href = 'form.html';
-        return false;
+        console.error("Форма не найдена.");
     }
-}
+});
 
-function formatPhoneNumber(input) {
-    var cleanedInput = input.replace(/\D/g, '');
 
-    cleanedInput = cleanedInput.substring(0, 11);
+///////// Практика 14 /////////
 
-    // Форматируем номер
-    var formattedNumber = '';
-    if (cleanedInput.length > 0) {
-        formattedNumber += '+7 ';
+// Обработчик события для формы
+document.addEventListener('DOMContentLoaded', () => {
+    const practiceForm = document.getElementById('service-form');
+    const messageContainer = document.createElement('div');
+    messageContainer.classList.add('message-popup');
+    document.body.appendChild(messageContainer);
+
+    if (practiceForm) {
+        practiceForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            messageContainer.textContent = 'Форма отправлена!';
+            messageContainer.classList.add('success', 'show');
+            
+            // Анимация изменения цвета
+            setTimeout(() => {
+                messageContainer.classList.remove('success');
+                messageContainer.classList.add('info');
+            }, 500);
+            
+            setTimeout(() => {
+                messageContainer.classList.remove('show');
+            }, 4000);
+        });
     }
-    if (cleanedInput.length > 1) {
-        formattedNumber += '(' + cleanedInput.substring(1, 4);
-    }
-    if (cleanedInput.length > 4) {
-        formattedNumber += ') ' + cleanedInput.substring(4, 7);
-    }
-    if (cleanedInput.length > 7) {
-        formattedNumber += '-' + cleanedInput.substring(7, 9);
-    }
-    if (cleanedInput.length > 9) {
-        formattedNumber += '-' + cleanedInput.substring(9);
-    }
-
-    return formattedNumber;
-}
-
-function handlePhoneInput(event) {
-    var input = event.target;
-    var formattedNumber = formatPhoneNumber(input.value);
-    input.value = formattedNumber;
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    var phoneInput = document.getElementById('phone');
-    phoneInput.addEventListener('input', handlePhoneInput);
 });

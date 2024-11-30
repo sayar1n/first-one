@@ -4,9 +4,10 @@
 }
 
 body {
-    background-color:rgb(247, 224, 248);
+    background-color:rgb(240, 199, 241);
     background: cover;
     line-height: 22px;
-    font-size: 110%;
+    font-size: 120%;
     font-family: 'Montserrat';
+    margin: 0px;
 }

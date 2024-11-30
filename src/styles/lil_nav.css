@@ -2,17 +2,25 @@
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 .hero-navigation {
+    text-align: center;
     width: 15%;
-    padding: 10px 25px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 15px;
+    box-shadow: 0px 10px 20px rgba(49, 13, 44, 0.2) !important;
     border-radius: 10px;
     transition: box-shadow 0.3s ease;
     background-color: #ffffff;
+}
 
+.hero-navigation p a:hover {
+    color: #d6c4d1 !important;
+}
+
+.hero-navigation:hover {
+    box-shadow: 0px 0px 30px rgba(221, 221, 221, 0.3) !important;
 }
 
 .hero-navigation p a {
@@ -22,12 +30,8 @@
     transition: color 0.3s ease;
 }
 
-.hero-navigation p a:hover {
-    color: #94447c;
-}
-
-.hero-navigation:hover {
-    box-shadow: 0px 0px 30px rgba(231, 35, 199, 0.3);
+.navbar-toggler:hover {
+    background-color: rgb(145, 75, 129) !important;
 }
 
 .info {
@@ -37,6 +41,17 @@
     background-color: #ffffff;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+}
+
+/* Стили для заголовка навигации */
+.hero-navigation h2 {
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem); /* Адаптивный размер шрифта */
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+    word-wrap: break-word; /* Перенос длинных слов */
+    max-width: 100%; /* Ограничение ширины */
 }
 
 @media (max-width: 768px) {
@@ -51,6 +66,10 @@
         padding: 20px;
     }
 
+    .hero-navigation h2 {
+        font-size: 1.5rem; /* Больший размер на мобильных */
+    }
+
     .info {
         width: 100%;
         margin-left: 0;
@@ -61,7 +80,10 @@
 @media (max-width: 480px) {
     .hero-navigation {
         padding: 15px;
-        font-size: 14px;
+    }
+
+    .hero-navigation h2 {
+        font-size: 1.2rem;
     }
 
     .info {

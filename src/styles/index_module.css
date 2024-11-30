@@ -5,70 +5,92 @@
 @import url("global.css");
 
 .hero-hello {
-    display: flex;
-    align-items: center;
     margin-bottom: 20px;
 }
 
+/* Анимация для заголовка H1 14*/
+h1 {
+    transition: transform 0.3s;
+}
+h1:hover {
+    transform: scale(1.2);
+}
+
+/* Анимация для параграфа текста 14*/
+.animated-paragraph {
+    transition: background-color 0.5s;
+}
+.animated-paragraph.clicked {
+    background-color: rgb(219, 101, 182);
+}
+
 .cat_user {
-    width: 350px;
-    height: 350px;
-    margin-left: 250px;
-    border-radius: 10%;
+    width: 300px;
+    border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     object-fit: cover;
     padding: 15px;
     background-color: rgb(241, 178, 213);
+    transition: transform 0.3s;
 }
 
-.frontend div {
-    text-align: center;
+.cat_user:hover {
+    transform: rotate(360deg);
 }
 
-.backend div {
-    text-align: center;
+.info {
+    padding: 2rem;
 }
 
-.video {
-    display: block;
-    margin: auto;
-    margin-bottom: 10px;
-    width: 730px;
-    height: 434px;
+.frontend, .backend {
+    margin-bottom: 3rem;
 }
 
-@media (max-width: 1024px) {
-    .video {
-        width: 400px;
-    }
+.ratio iframe {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
-    .hero-hello {
-        flex-direction: column-reverse;
-        align-items: center;
-        text-align: center;
+    .cat_user {
+        width: 200px;
+        margin-top: 1rem;
     }
-
-    .user-image {
-        width: 150px;
-        height: 150px;
-        margin-left: 0;
-        margin-top: 20px;
-    }
-
-    .video {
-        width: 340px;
+    
+    .info {
+        padding: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .user-image {
-        width: 120px;
-        height: 120px;
+    .cat_user {
+        width: 150px;
     }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+}
 
-    .video {
-        width: 260px;
+/* Стили для видео контейнера */
+.video-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ratio iframe {
+    border: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .video-container {
+        margin: 0 10px;
     }
 }

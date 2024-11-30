@@ -1,24 +1,29 @@
-header {
+.header-custom {
     display: flex;
     justify-content: space-between;
     margin: 20px 20px;
     padding: 20px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
-    background-color:rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
 }
 
-.square {
-    width: 30px;
-    height: 30px;
-    border: 3px solid black;
-    border-radius: 25%;
+.logo {
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
-.logo h2 {
-    font-size: 20px;
-    margin: 0;
-    text-align: center;
+.profile-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ac4b87;
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
 }
 
 .info-me {
@@ -30,9 +35,8 @@ p span {
     font-weight: 800;
 }
 
-
 @media (max-width: 768px) {
-    header {
+    .header-custom {
         flex-direction: column;
         align-items: center;
         padding: 20px;
@@ -58,7 +62,7 @@ p span {
 }
 
 @media (max-width: 480px) {
-    header {
+    .header-custom {
         padding: 15px;
         margin: 5px 5px;
     }

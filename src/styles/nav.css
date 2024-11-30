@@ -2,13 +2,32 @@ nav {
     background: linear-gradient(to right, #aa7da4, #6e1152);
     border-radius: 5px;
     padding: 20px;
-    margin: 20px 20px;
+    margin: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-ul li {
-    display: inline;
-    margin-right: 25px;
+.navbar-nav {
+    display: flex;
+    justify-content: space-around !important;
+}
+
+.navbar-nav .nav-link {
+    text-decoration: none;
+    color: #fff !important;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #641343;
+}
+
+.navbar-nav .nav-link:active {
+    background-color: #e781c0;
 }
 
 nav ul {
@@ -19,68 +38,37 @@ nav ul {
     justify-content: space-around;
 }
 
-nav li {
-    margin: 0;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
-nav a:hover {
-    background-color: #641343;
-}
-
-nav a:active {
-    background-color: #e781c0;
-}
-
 @media (max-width: 768px) {
-    .navigation {
-        height: auto;
-        padding: 10px;
-        justify-content: start;
-    }
-
-    ul {
-        padding-left: 20px;
+    nav ul {
         flex-direction: column;
         align-items: center;
+        padding-left: 0;
     }
 
-    ul li {
-        display: block;
+    nav ul li {
         margin-bottom: 15px;
-        margin-right: 0;
+        text-align: center;
     }
 
-    ul li a {
+    nav ul li a {
         font-size: 16px;
     }
 
-    ul li a:hover {
+    nav ul li a:hover {
         font-size: 18px;
     }
 }
 
 @media (max-width: 480px) {
-    .navigation {
-        padding: 5px;
-    }
-
-    ul {
-        padding-left: 10px;
-    }
-
-    ul li a {
+    nav ul li a {
         font-size: 14px;
     }
 
-    ul li a:hover {
+    nav ul li a:hover {
         font-size: 16px;
     }
+}
+
+.navbar-toggler:hover {
+    box-shadow: 0 0 0 0.2rem rgba(231, 231, 231, 0.25) !important;
 }

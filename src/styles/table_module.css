@@ -5,75 +5,120 @@
 @import url("global.css");
 
 
-table {
-    width: 90%;
-    border-collapse: collapse;
-    margin-top: 20px;
+/* Обновленные стили для таблиц */
+.table-responsive {
+    border-radius: 10px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
     overflow: hidden;
-    margin-left: 20px;
+    transition: opacity 0.5s ease;
 }
 
-table thead {
-    background-color: #ac4b87;
-    color: #ffffff;
+.table {
+    margin-bottom: 0 !important;
 }
 
-table th, table td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+/* Стили для заголовков таблицы */
+.table > thead > tr > th {
+    background-color: #ac4b87 !important;
+    color: white !important;
+    font-size: 1.1rem !important;
+    padding: 1rem !important;
+    border-bottom: none !important;
 }
 
-table tr:last-child td {
-    border-bottom: none;
+/* Стили для ячеек таблицы */
+.table td {
+    padding: 1rem !important;
+    vertical-align: middle !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+/* Стили для строк таблицы */
+.table tbody tr:hover {
+    background-color: #f8e5f0 !important;
 }
 
-table input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
+/* Стили для чекбоксов */
+.form-check-input {
+    width: 1.2rem !important;
+    height: 1.2rem !important;
+    cursor: pointer !important;
+    border-color: #ac4b87 !important;
 }
 
-table th {
-    font-size: 16px;
+.form-check-input:checked {
+    background-color: #ac4b87 !important;
+    border-color: #ac4b87 !important;
 }
 
-table td {
-    font-size: 14px;
+/* Адаптивность */
+@media (max-width: 768px) {
+    .table thead th {
+        font-size: 0.9rem !important;
+        padding: 0.75rem !important;
+    }
+
+    .table td {
+        font-size: 0.9rem !important;
+        padding: 0.75rem !important;
+    }
+
+    .form-check-input {
+        width: 1rem !important;
+        height: 1rem !important;
+    }
 }
 
-table tbody tr:hover {
-    background-color: #e0e3e6;
-    cursor: pointer;
+@media (max-width: 480px) {
+    .table thead th {
+        font-size: 0.8rem !important;
+        padding: 0.5rem !important;
+    }
+
+    .table td {
+        font-size: 0.8rem !important;
+        padding: 0.5rem !important;
+    }
 }
+
+/* Остальные стили остаются без изменений */
+
+.navbar-light .navbar-nav .nav-link {
+    color: #ac4b87;
+    transition: color 0.3s;
+ }
+
+ .navbar-light .navbar-nav .nav-link:hover {
+    color: #ac4b87;
+ }
+
+ .accordion-button:focus {
+    background-color: #ac4b87; /* Цвет фона при нажатии */
+    color: white;  /* Цвет текста при нажатии */
+}
+
+.accordion-button {
+    transition: background-color 0.3s ease;
+}
+
+ .carousel-item img {
+    height: 700px;
+    width: 100%;
+    object-fit: cover;
+ }
 
 .adress_v {
     margin-top: 20px;
 }
 
-.adress_v h3 {
-    font-size: 24px;
-}
-
 .adress_v p {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 20px;
 }
 
 .workin_prog {
     margin-top: 20px;
     padding: 10px;
-}
-
-.workin_prog h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
 }
 
 .workin_prog p {
@@ -124,37 +169,6 @@ table tbody tr:hover {
     top: 20px;
 }
 
-@media (max-width: 1024px) {
-    .lectures-table, .practices-table {
-        font-size: 14px;
-    }
-
-    .lectures-table th, .lectures-table td,
-    .practices-table th, .practices-table td {
-        padding: 11px;
-    }
-
-    .lessons h3, .programm h3 {
-        font-size: 22px;
-    }
-
-    .lessons p, .programm p {
-        font-size: 17px;
-    }
-
-    .programm embed, .programm object {
-        height: 500px;
-    }
-
-    .lectures-table th {
-        font-size: 14px;
-    }
-
-    .practices-table th {
-        font-size: 14px;
-    }
-}
-
 @media (max-width: 768px) {
     .lectures-table, .practices-table {
         font-size: 12px;
@@ -177,19 +191,11 @@ table tbody tr:hover {
         height: 400px;
     }
 
-    .lectures-table th {
+    .lectures-table th, .practices-table th {
         font-size: 12px;
     }
 
-    .practices-table th {
-        font-size: 12px;
-    }
-
-    .lectures-table td {
-        font-size: 12px;
-    }
-
-    .practices-table td {
+    .lectures-table td, .practices-table td {
         font-size: 12px;
     }
 }
@@ -219,11 +225,7 @@ table tbody tr:hover {
         height: 300px;
     }
 
-    .lectures-table th {
-        font-size: 10px;
-    }
-
-    .practices-table th {
+    .lectures-table th, .practices-table th {
         font-size: 10px;
     }
 }
@@ -231,13 +233,13 @@ table tbody tr:hover {
 @media (max-width: 375px) {
     .lectures-table, .practices-table {
         font-size: 8px;
-        overflow-x: auto; 
+        overflow-x: auto;
     }
 
     .lectures-table th, .lectures-table td,
     .practices-table th, .practices-table td {
         padding: 6px;
-        white-space: normal; 
+        white-space: normal;
         word-break: break-word;
     }
 
@@ -253,7 +255,57 @@ table tbody tr:hover {
         height: 250px;
     }
 
-    .practices-table th {
+    .lectures-table th, .practices-table th {
         font-size: 8px;
     }
+}
+
+/* Стили для аккордеона */
+.accordion-button {
+    color: #572743 !important;
+    background-color: #f8e5f0 !important; 
+    transition: all 0.2s ease !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #572743 !important;
+    color: white !important;
+}
+
+.accordion-button:hover {
+    background-color: #572743 !important;
+    color: white !important;
+}
+
+.accordion-button:focus {
+    box-shadow: none !important;
+}
+
+.accordion-body {
+    background-color: #fdf7fc !important; 
+}
+
+.pdf-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ratio iframe, .ratio object {
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-custom {
+    background-color: #ac4b87 !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 5px !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-custom:hover {
+    background-color: #572743 !important;
+    color: white !important;
 }
